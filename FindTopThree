@@ -1,0 +1,59 @@
+package mypackage;
+public class FindTopThree {
+
+	    /**
+	    * @param args
+	    */
+
+	    public static void main( String[] args) {
+	        
+	       // int arr[] = {1,2,3,4,6,7,8,8,9,10,18,18,20};
+	        
+	        int arr[] = {20,19,16,19,18};
+	        
+	        int out[] = getTopThree(arr) ;
+	        for (int i : out) {
+	        	System.out.print(i + " ") ;
+				
+			}
+	    }
+	    
+	    public static int[] getTopThree(int arr[]) {
+	        
+	        int output[] = new int[3];
+	        int a =0, b=0, c = 0;
+	        
+	        for(int i=0; i<arr.length; i++) {
+	            
+	           
+	            
+	            for (i = 0; i < arr.length ; i ++) 
+	            { 
+	                if (arr[i] > a) 
+	                { 
+	                    c = b; 
+	                    b = a; 
+	                    a = arr[i]; 
+	                }else if (arr[i] > b) 
+	                { 
+	                    c = b; 
+	                    b = arr[i]; 
+	                }else if (arr[i] > c) 
+	                    c = arr[i]; 
+	            } 
+	            
+	            
+	        }
+	        
+	        output[0] = a;
+	        output[1] = b;
+	        output[2] = c;
+	        
+	        return output;
+	        
+	        
+	    }
+
+	}
+
+
